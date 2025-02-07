@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            background-color: #ffcccb;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            margin-top: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        h1, p {
+            color: #ff4d4d;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+        }
+        h1 {
+            font-size: 32px;
+        }
+        .image {
+            width: 60%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .yes-btn {
+            background-color: #ff4d4d;
+            color: white;
+            box-shadow: 0px 4px 8px rgba(255, 77, 77, 0.5);
+        }
+        .yes-btn:hover {
+            background-color: #ff1a1a;
+            transform: scale(1.1);
+        }
+        .no-btn {
+            background-color: #999;
+            color: white;
+            position: absolute;
+        }
+        .floating-heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: floatUp 5s infinite ease-in-out;
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To My Darling Girlfriend (Future Wife),</h1>
+        <p>I love you, I love you a lot ❤️❤️</p>
+        <p>I cannot take a breath without thinking about you. life has been amazing with you in it</p>
+		<p>plaease be with me thorught this journey of life, and we'll make it beautiful together</p>
+        <p>I love you, and I'm madly in love with you ❤️❤️</p>
+        <h1>So this Valentine's, will you be my Valentine? ❤️❤️</h1>
+        <img src="WhatsApp Image 2025-01-04 at 13.37.12_cd6a551c" class="image" alt="Us Together"> 
+        <br><br>
+        <button class="btn yes-btn" onclick="sayYes()">Yes</button>
+        <button class="btn no-btn" id="noBtn" onmouseover="moveButton()">No</button>
+    </div>
+
+    <audio autoplay loop>
+        <source src="New West - Those Eyes (Home Session)" type="audio/mp3">
+    </audio>
+
+    <script>
+        function sayYes() {
+            alert("Yay! I knew you'd say yes! 💖");
+        }
+
+        function moveButton() {
+            let noBtn = document.getElementById("noBtn");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        }
+
+        function createFloatingHearts() {
+            for (let i = 0; i < 20; i++) {
+                let heart = document.createElement("div");
+                heart.innerHTML = "❤️";
+                heart.classList.add("floating-heart");
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+                heart.style.fontSize = Math.random() * 20 + 20 + "px";
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 5000);
+            }
+        }
+
+        setInterval(createFloatingHearts, 1000);
+    </script>
+</body>
+</html>
